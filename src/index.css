@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Offset anchored sections so the sticky nav doesn't cover headings */
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply bg-soft-white text-ink font-sans antialiased;
+  }
+
+  /* Visible, consistent keyboard focus on every interactive element */
+  :focus-visible {
+    outline: 2px solid theme('colors.strait-teal');
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+@layer components {
+  /* Signature motif: the animated "waterline" divider */
+  .waterline {
+    height: 3px;
+    width: 100%;
+    background: linear-gradient(
+      90deg,
+      theme('colors.strait-teal'),
+      theme('colors.calm-sky'),
+      theme('colors.strait-teal')
+    );
+    background-size: 200% 100%;
+    @apply animate-waterline;
+  }
+
+  /* Ambient hero background: slow drift between navy and deep teal */
+  .hero-ambient {
+    background: linear-gradient(120deg, #0f2b3c 0%, #123c44 40%, #0f2b3c 70%, #14484a 100%);
+    background-size: 200% 200%;
+    @apply animate-heroPulse;
+  }
+
+  .eyebrow {
+    @apply font-mono text-xs sm:text-sm uppercase tracking-[0.2em] text-strait-teal;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-lg bg-strait-teal px-6 py-3
+      font-sans font-medium text-soft-white transition-colors duration-200
+      hover:bg-calm-sky hover:text-deep-navy min-h-[44px];
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-lg border border-calm-sky/60
+      px-6 py-3 font-sans font-medium text-calm-sky transition-colors duration-200
+      hover:bg-calm-sky hover:text-deep-navy min-h-[44px];
+  }
+}
+
+/* Scroll-reveal: start hidden, animate in when observed */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Respect users who prefer reduced motion: kill ambient + reveal animation */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .hero-ambient,
+  .waterline {
+    animation: none !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
