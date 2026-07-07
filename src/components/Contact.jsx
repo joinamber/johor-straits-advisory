@@ -10,7 +10,7 @@ import Reveal from './Reveal'
  * link so it works with zero configuration.
  */
 const FORMSPREE_ID = 'your_form_id' // e.g. 'xda-abc123' — replace to enable Formspree
-const CONTACT_EMAIL = 'amber@adptv.xyz'
+const CONTACT_EMAIL = 'contact@johorstraitsadvisory.com'
 const formspreeConfigured = FORMSPREE_ID && FORMSPREE_ID !== 'your_form_id'
 
 const COUNTRIES = ['Singapore', 'Malaysia', 'China', 'United States', 'Other']
