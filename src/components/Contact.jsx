@@ -9,7 +9,7 @@ import Reveal from './Reveal'
  * When left as the placeholder, the form automatically falls back to a mailto:
  * link so it works with zero configuration.
  */
-const FORMSPREE_ID = 'your_form_id' // e.g. 'xda-abc123' — replace to enable Formspree
+const FORMSPREE_ID = 'xwvdzrva'
 const CONTACT_EMAIL = 'contact@johorstraitsadvisory.com'
 const formspreeConfigured = FORMSPREE_ID && FORMSPREE_ID !== 'your_form_id'
 
