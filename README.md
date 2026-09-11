@@ -38,7 +38,7 @@ host with zero configuration.
 ## Contact form configuration
 
 The contact form works out of the box with **no setup** via a `mailto:` fallback to
-`amber@adptv.xyz`.
+`johorstraitsadvisory@gmail.com`.
 
 To collect submissions through a form backend instead:
 

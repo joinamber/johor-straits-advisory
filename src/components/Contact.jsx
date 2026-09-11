@@ -10,7 +10,7 @@ import Reveal from './Reveal'
  * link so it works with zero configuration.
  */
 const FORMSPREE_ID = 'xwvdzrva'
-const CONTACT_EMAIL = 'contact@johorstraitsadvisory.com'
+const CONTACT_EMAIL = 'johorstraitsadvisory@gmail.com'
 const formspreeConfigured = FORMSPREE_ID && FORMSPREE_ID !== 'your_form_id'
 
 const COUNTRIES = ['Singapore', 'Malaysia', 'China', 'United States', 'Other']
